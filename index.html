@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- WEBSITE BY CYPHER -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$MOPSY</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <script src="jquery-3.4.1.js"></script>
+    
+    <script src="particles.js" defer></script>
+    <script src="particles-app.js" defer></script>
+    
+    <style>
+        img[alt="www.000webhost.com"] {
+        display: none;
+        }
+        @font-face {
+            font-family: Super Moods;
+            src: url(font.ttf);
+        }
+        * {
+        box-sizing: border-box;
+        }
+        html{
+        scroll-behavior: smooth;
+        }
+        body {
+        margin: 0;
+        background:linear-gradient(to left, #b0f9e5, #1fc2cb);
+        background-repeat:no-repeat;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        padding:0;
+        }
+        a {
+        text-decoration: none;
+        }
+        p {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        }
+        button{
+            cursor: pointer;
+        }
+        select:focus,input:focus,button:focus {
+        cursor: pointer;
+        outline: none;
+        }
+        :root {
+        --blue: #005596;
+        --dark-blue: #002e63;
+        --light-blue: #4c84af;
+        --pink: #d80651;
+        --light-green: #03ac13;
+        --green:#35b972;
+        --dark-green: #004d43;
+        --transparent-black:rgba(53,58,77,.8);
+        --light-black:#262b3c;
+        --black:#1c1f2d;
+        --default-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+
+
+
+        .body-wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction:column;
+            flex-wrap:nowrap;
+            gap:0;
+            width:100%;
+        }
+
+
+                
+        .section-1{
+        width:100%;
+        background:transparent;
+        position: relative;
+        }
+        .section-1 .beach-image{
+        width:100%;
+        height:100%;
+        object-fit: cover;
+        position:absolute;
+        top:0;
+        left:0;
+        z-index:-2;
+        filter:brightness(40%);
+        }
+        .section-1 .background-particle{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index:-1;
+        }
+        .section-1 .content-wrapper{
+        width:100%;
+        display:flex;
+        align-items: center;
+        justify-content:flex-start;
+        flex-direction:column;
+        flex-wrap:nowrap;
+        gap:0;
+        padding:20px 0 160px;
+        }
+        .section-1 .socials-wrapper{
+            display: flex;
+            align-items:flex-end;
+            justify-content: center;
+            flex-direction:row;
+            flex-wrap:wrap;
+            gap:10px;
+        }
+        .section-1 .socials-wrapper .icon{
+            display: block;
+            width:30px;
+            height:30px;
+            border-radius:5px;
+            overflow:hidden;
+        }
+        .section-1 .socials-wrapper .icon .icon-img{
+            width:100%;
+            height:100%;
+        }
+        .section-1 .main-logo{
+            width: min(calc(100% - 40px), 350px);
+            margin: 20px 0 0;
+        }
+        .section-1 .fan-token-text{
+            width:100%;
+            text-align: center;
+            font-size:60px;
+            font-family:Super Moods;
+            color:#fff;
+            font-weight:400;
+            margin: 15px 0 0;
+            text-shadow: 0px 0px 2px #000;
+        }
+        .section-1 .button-link-wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 15px 0 0;
+        }
+        .section-1 .button-link-wrapper .button{
+            text-align: center;
+            padding: 17px 25px 14px;
+            gap: 10px;
+            background: var(--light-black);
+            border: 1px solid #000000;
+            box-shadow: 9px 9px 0px 1px #000000;
+            border-radius: 20px;
+            color: #fff;
+            font-size: 32px;
+            text-decoration: none;
+            font-weight: 100;
+            font-family: Super Moods;
+            letter-spacing: 0.5px;
+            max-width:calc(100% - 40px);
+        }
+        .section-1 .button-link-wrapper .button:hover{
+        background: #dd6462;
+        }
+
+
+        .section-2-start-image{
+            width:100%;
+            margin: -75px 0 0;
+        }
+        .section-2-end-image{
+            width:100%;
+        }
+
+        .section-2{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction:column;
+            flex-wrap:nowrap;
+            gap:0;
+            background:#25c0bc;
+            width:100%;
+            padding:40px 0;
+        }
+        .section-2 .title{
+            display: block;
+            position:relative;
+        }
+        .section-2 .title .icon-img{
+            position: absolute;
+            top: -27px;
+            left: -50px;
+            width: 63px;
+            filter: invert(1) brightness(2) drop-shadow(0 0 1px black);
+        }
+        .section-2 .title .text{
+            font-family:Super Moods;
+            font-size:40px;
+            color:#fff;
+            text-shadow: 0px 0px 2px #000;
+        }
+        .section-2 .main-picture{
+            border-radius: 30px;
+            border: 5px solid #191919;
+            width: min(calc(100% - 40px), 300px);
+            margin: 20px 0 0;
+        }
+        .section-2 .bottom-text{
+            font-family: Super Moods;
+            font-size: 30px;
+            text-align: center;
+            width: 100%;
+            color: #fff;
+            letter-spacing: 0.3mm;
+            margin: 40px 0 0;
+            text-shadow: 0px 0px 2px #000;
+        }
+        .section-2 .heart-img{
+            width: 70px;
+            filter: invert(1) brightness(2) drop-shadow(0 0 1px black);
+        }
+
+
+        .section-3{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction:column;
+            flex-wrap:nowrap;
+            gap:0;
+            margin:70px 0 0;
+            width:min(500px , 100%);
+        }
+        .section-3 .tokenomics-image{
+            width: 100%;
+            filter: invert(1) brightness(2);
+        }
+        .section-3 .text-1{
+            width: 100%;
+            font-family: Super Moods;
+            font-size: 27px;
+            text-align: center;
+            margin: 30px 0 0;
+            letter-spacing: 0.2mm;
+            color: #fff;
+            text-shadow: 0px 0px 2px #000;
+            padding:0 10px;
+        }
+        .section-3 .text-2{
+            width: 100%;
+            font-family: Super Moods;
+            font-size: 27px;
+            text-align: center;
+            margin: 30px 0 0;
+            color: #d2d428;
+            text-shadow: 0px 0px 2px rgba(0,0,0,0.5);
+            padding: 0 20px;
+            line-height: 35px;
+        }
+        .section-3 .buy-now-button{
+            text-align: center;
+            padding: 17px 25px 14px;
+            gap: 10px;
+            background: var(--light-black);
+            border: 1px solid #000000;
+            box-shadow: 9px 9px 0px 1px #000000;
+            border-radius: 20px;
+            color: #fff;
+            font-size: 28px;
+            text-decoration: none;
+            font-weight: 100;
+            font-family: Super Moods;
+            letter-spacing: 0.5px;
+            max-width:calc(100% - 40px);
+            margin: 40px 0 0;
+        }
+        .section-3 .buy-now-button:hover{
+        background: #dd6462;
+        }
+
+
+
+        .section-4{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction:row;
+            flex-wrap:wrap;
+            gap:15px;
+            margin:100px 0 0;
+            width:100%;
+            padding: 0 20px;
+        }
+        .section-4 .image{
+            width:min(400px , 100%);
+            border:1px solid #d1d1d1;
+            border-radius:15px;
+            box-shadow:0 0 5px 1px rgba(0,0,0,0.2);
+        }
+
+
+
+
+
+        .section-5{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction:column;
+            flex-wrap:nowrap;
+            gap:0;
+            margin:70px 0 0;
+            padding-bottom:150px;
+            width:min(500px , 100%);
+        }
+        .section-5 .main-logo{
+            width: min(calc(100% - 40px), 350px);
+            margin: 20px 0 0;
+        }
+        .section-5 .fan-token-text{
+            width:100%;
+            text-align: center;
+            font-size:60px;
+            font-family:Super Moods;
+            color:rgba(255,255,255,0.9);
+            font-weight:400;
+            margin: 25px 0 0;
+        }
+        .section-5 .socials-wrapper{
+            display: flex;
+            align-items:flex-end;
+            justify-content: center;
+            flex-direction:row;
+            flex-wrap:wrap;
+            gap:10px;
+            margin: 25px 0 0;
+        }
+        .section-5 .socials-wrapper .icon{
+            display: block;
+            width:30px;
+            height:30px;
+            border-radius:5px;
+            overflow:hidden;
+        }
+        .section-5 .socials-wrapper .icon .icon-img{
+            width:100%;
+            height:100%;
+        }
+        .section-5 .button-link-wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0 0;
+        }
+        .section-5 .button-link-wrapper .button{
+            text-align: center;
+            padding: 17px 25px 14px;
+            gap: 10px;
+            background: var(--light-black);
+            border: 1px solid #000000;
+            box-shadow: 9px 9px 0px 1px #000000;
+            border-radius: 20px;
+            color: #fff;
+            font-size: 32px;
+            text-decoration: none;
+            font-weight: 100;
+            font-family: Super Moods;
+            letter-spacing: 0.5px;
+            max-width:calc(100% - 40px);
+        }
+        .section-5 .button-link-wrapper .button:hover{
+        background: #dd6462;
+        }
+
+
+
+
+
+
+
+
+        .animate-elements{
+            transform:translateY(100px);
+            opacity:0;
+            transition:0.4s;
+        }
+        .animate-elements.visible{
+            transform:none;
+            opacity:1;
+        }
+
+
+
+
+
+
+
+
+        @media screen and (min-width: 750px) {
+            .section-1 .content-wrapper{
+            padding:20px 0 185px;
+            }
+            .section-2-start-image{
+                margin: -100px 0 0;
+            }
+        }
+
+        @media screen and (min-width: 950px) {
+            .section-4 .image{
+                width:300px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="body-wrapper">
+
+        <section class="section-1">
+                
+            <img src="/images/beach-background.jpg" alt="" class="beach-image">
+            <div class="background-particle" id="particles-js"></div>
+            
+            <div class="content-wrapper">
+                <div class="socials-wrapper">
+                    <!-- <a href="#" class="icon" target="_blank"><img src="/images/dexscreener.png" alt="icon" class="icon-img"></a> -->
+                    <!-- <a href="#" class="icon" target="_blank"><img src="/images/moonshot.png" alt="icon" class="icon-img"></a> -->
+                    <a href="https://t.me/MOPSYCOIN" class="icon" target="_blank"><img src="/images/telegram.png" alt="icon" class="icon-img"></a>
+                    <!-- <a href="#" class="icon" target="_blank"><img src="/images/jupyter.png" alt="icon" class="icon-img"></a> -->
+                    <a href="https://x.com/MOPSYCOIN" class="icon" target="_blank"><img src="/images/x.png" alt="icon" class="icon-img"></a>
+                </div>
+                <img src="/images/banner-transparent.png" alt="" class="main-logo">
+                <p class="fan-token-text animate-elements">FAN TOKEN</p>
+                <div class="button-link-wrapper">
+                    <button class="button animate-elements" onclick="alert('Coming soon...')">BUY $MOPSY</button>
+                    <button class="button animate-elements" onclick="alert('Coming soon...')">Contract Address</button>
+                </div>
+            </div>
+        </section>
+
+        <img src="/images/section-2-start-image.png" class="section-2-start-image">
+        
+        <section class="section-2">
+            <div class="title animate-elements">
+                <img src="/images/tags.png" class="icon-img">
+                <p class="text">ABOUT $MOPSY</p>
+            </div>
+            <img src="/images/logo.jpg" alt="" class="main-picture animate-elements">
+            <p class="bottom-text animate-elements">just a viral lil koala</p>
+            <img src="/images/heart.png" alt="" class="heart-img animate-elements">
+        </section>
+
+        <img src="/images/section-2-end-image.png" class="section-2-end-image">
+
+        <section class="section-3">
+            <img src="images/tokenomics.png" class="tokenomics-image animate-elements" />
+            <p class="text-1 animate-elements">Supply : 1B<br>Ticker : $MOPSY<br>Marketing : 5%</p>
+            <p class="text-2 animate-elements">100% of fees generated by trading MOPSY on the Moonshot app will be donated to the Khao Kheow Open Zoo</p>
+            <button class="buy-now-button animate-elements" onclick="alert('Coming soon...')">Buy now with Apple pay on the Moonshot app</button>
+        </section>
+
+        <section class="section-4">
+            <img src="/images/more-koala-pictures-1.jpg" class="image animate-elements">
+            <img src="/images/more-koala-pictures-2.jpg" class="image animate-elements">
+            <img src="/images/more-koala-pictures-3.jpg" class="image animate-elements">
+            <img src="/images/more-koala-pictures-4.jpg" class="image animate-elements">
+            <img src="/images/more-koala-pictures-5.jpg" class="image animate-elements">
+            <img src="/images/logo.jpg" class="image animate-elements">
+        </section>
+        
+        <section class="section-5">
+            <img src="/images/banner-transparent.png" alt="" class="main-logo animate-elements">
+            <p class="fan-token-text animate-elements">FAN TOKEN</p>
+            <div class="socials-wrapper animate-elements">
+                <!-- <a href="#" class="icon" target="_blank"><img src="/images/dexscreener.png" alt="icon" class="icon-img"></a> -->
+                <!-- <a href="#" class="icon" target="_blank"><img src="/images/moonshot.png" alt="icon" class="icon-img"></a> -->
+                <a href="https://t.me/MOPSYCOIN" class="icon" target="_blank"><img src="/images/telegram.png" alt="icon" class="icon-img"></a>
+                <!-- <a href="#" class="icon" target="_blank"><img src="/images/jupyter.png" alt="icon" class="icon-img"></a> -->
+                <a href="https://x.com/MOPSYCOIN" class="icon" target="_blank"><img src="/images/x.png" alt="icon" class="icon-img"></a>
+            </div>
+            <div class="button-link-wrapper">
+                <button class="button animate-elements" onclick="alert('Coming soon...')">BUY $MOPSY</button>
+                <button class="button animate-elements" onclick="alert('Coming soon...')">Contract Address</button>
+            </div>
+        </section>
+
+
+    </div>
+    
+
+
+
+
+
+
+<script>
+    function scrollEventFunction(){
+        let pageTop = $(document).scrollTop();
+        let pageBottom = pageTop + $(window).height();
+        let tags = $(".animate-elements");
+        
+        for (var i = 0; i < tags.length; i++) {
+            var tag = tags[i];
+            if ($(tag).position().top < pageBottom) {
+                $(tag).addClass("visible");
+            } else {
+                $(tag).removeClass("visible");
+            }
+        }
+    }
+    scrollEventFunction();
+    document.addEventListener("scroll",scrollEventFunction);
+
+
+    function copyToClipboard(text, element) {
+        const oldValue = element.innerText;
+        element.innerText = "Copied !"
+        setTimeout(() => {
+            element.innerText = oldValue;
+        }, 500)
+        if (window.clipboardData && window.clipboardData.setData) {
+            return window.clipboardData.setData("Text", text);
+
+        }
+        else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+            var textarea = document.createElement("textarea");
+            textarea.textContent = text;
+            textarea.style.position = "fixed";
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                return document.execCommand("copy");
+            }
+            catch (ex) {
+                console.warn("Copy to clipboard failed.", ex);
+                return prompt("Copy to clipboard: Ctrl+C, Enter", text);
+            }
+            finally {
+                document.body.removeChild(textarea);
+            }
+        }
+    }
+
+
+</script>
+</body>
+
+</html>
